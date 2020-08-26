@@ -5,8 +5,11 @@ class BoardItem extends Component {
         const { row, onRemove } = this.props;
         onRemove(row.brdno);
     }
+    handleSelectRow = () => {
+        const { row, onSelectRow } = this.props;
+        onSelectRow(row);
+    }
     render() {
-        console.log(this.props.row.brdno);
         return (
             <tr>
                 <td>{this.props.row.brdno}</td>

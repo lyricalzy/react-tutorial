@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
 class BoardForm extends Component {
-    state = {}
+    state = {
+        brdwriter: '',
+        brdtitle: ''
+    }
+
+    handleSelectRow = (row) => {
+        this.setState(row);
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -18,8 +25,8 @@ class BoardForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input placeholder="title" name="brdtitle" onChange={this.handleChange}/>
-                <input placeholder="writer" name="brdwriter" onChange={this.handleChange}/>
+                <input placeholder="title" name="brdtitle" value={this.state.brdtitle} onChange={this.handleChange}/>
+                <input placeholder="writer" name="brdwriter" value={this.state.brdwriter} onChange={this.handleChange}/>
                 <button type="submit">Save</button>
             </form>
         );
