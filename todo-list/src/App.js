@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Form from './componenets/Form';
+import TodoItempList from './componenets/TodoItemList';
 import TodoListTemplate from './componenets/TodoListTemplate';
 
 class App extends Component {
   render() {
     return (
-      <TodoListTemplate>
-        템플릿 완성
+      <TodoListTemplate form={<Form/>}>
+        <TodoItempList/>
       </TodoListTemplate>
     );
   }
